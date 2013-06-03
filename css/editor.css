@@ -1,0 +1,42 @@
+body.cke_show_borders {
+	background: #fff !important;
+}
+.ds-1col.node.node-policy-guideline ol {
+	list-style: upper-roman;
+}
+.ds-1col.node.node-policy-guideline ol ol {
+	list-style: upper-alpha;
+}
+.ds-1col.node.node-policy-guideline ol ol ol {
+	list-style: decimal;
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol {
+	list-style: lower-alpha;
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol {
+	list-style-type: none;
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol li:before {
+	content: "(" counter(section, decimal) ") ";
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol li {
+	counter-increment: section;
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol ol {
+	list-style-type: none;
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol ol li:before {
+	content: "(" counter(section2, lower-alpha) ") ";
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol ol li {
+	counter-increment: section2;
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol ol ol {
+	list-style-type: none;
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol ol ol li:before {
+	content: "(" counter(section3, lower-roman) ") ";
+}
+.ds-1col.node.node-policy-guideline ol ol ol ol ol ol ol li {
+	counter-increment: section3;
+}
