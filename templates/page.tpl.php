@@ -1,7 +1,7 @@
 <?php
 // Set some variables
 $tbr_base_url = "http://tbrtest.tbr.edu";
-$tbr_base_theme = drupal_get_path('theme', 'THEME_NAME');
+$tbr_base_theme = path_to_theme();
 ?>
 <div id="skipnav" class="element-invisible">
   <div class="container">
