@@ -1,7 +1,7 @@
 /* Media Query ID Helper **********************/
 body::before {
   content: "< 480px"; }
- 
+
  @media  only screen and (min-width: 480px) {
   body::before {
     content: "480px < 600px"; } }
@@ -19,8 +19,13 @@ body::before {
     content: "1382px <"; } }
 
 
-/* THEME OPTIONS ************************** */    
+/* THEME OPTIONS ************************** */
 /* GLOBAL ********************************* */
+/* ----- System Fixes ---------------- */
+ul li.leaf {
+  list-style: none;
+  list-style-image: none;
+}
 /* ----- Body ------------------------ */
 body {
 	/* background: #f9f0cf url("../images/bg_map.jpg") repeat-x center top; */
@@ -279,7 +284,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
   border-bottom: none;
   margin-bottom: -1px;
 }
- 
+
 .group-topics  div.vertical-tabs {
   background: #FFFFFF;
   border: none;
@@ -290,14 +295,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
   margin: 10px 0;
   position: relative;
 }
- 
+
 .group-topics div.vertical-tabs .vertical-tabs-panes {
   margin: 0;
   padding: 10px 15px;
   clear: both;
   border: 1px solid #ccc;
 }
- 
+
 .group-topics div.vertical-tabs ul li.vertical-tab-button {
   float: left;
   margin: 0 3px 0 0;
@@ -312,7 +317,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .group-topics div.vertical-tabs ul li.vertical-tab-button:focus {
 
 	outline: none;
-} 
+}
 .group-topics div.vertical-tabs ul li.vertical-tab-button a {
   border-top: medium none;
   font-size: 0.917em;
@@ -321,7 +326,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
   text-decoration: none;
   font-weight: normal !important;
 }
- 
+
 .group-topics div.vertical-tabs ul li.vertical-tab-button a:hover {
   background: none;
   outline: none;
@@ -335,7 +340,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .group-topics ul.vertical-tabs-list li a strong {
 	text-decoration: none;
 	font-weight: normal;
-} 
+}
 .group-topics div.vertical-tabs ul li.selected {
   border: 1px solid #ccc;
   border-bottom: 1px solid #fff;
@@ -347,10 +352,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .group-topics .vertical-tabs ul.vertical-tabs-list .summary {
 	display: none;
 }
- 
-.group-topics div.vertical-tabs ul li.selected a, 
-.group-topics div.vertical-tabs ul li.selected a:hover, 
-.group-topics div.vertical-tabs ul li.selected a:focus, 
+
+.group-topics div.vertical-tabs ul li.selected a,
+.group-topics div.vertical-tabs ul li.selected a:hover,
+.group-topics div.vertical-tabs ul li.selected a:focus,
 .group-topics div.vertical-tabs ul li.selected a:active {
   background: none;
   border: none;
@@ -378,7 +383,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .list-columns {
 	-moz-column-width: 20em;
     -webkit-column-width: 20em;
-    column-width: 20em; 	
+    column-width: 20em;
     margin-bottom: 10px;
 }
 .list-columns ul li:first-child
@@ -478,14 +483,14 @@ img.right,
 /* MEDIA QUERIES ************************* */
 /* ----- Responsive ------------------ */
  @media  (min-width: 1200px) {
-	 
+
  }
- 
+
 /* Portrait tablet to landscape and desktop */
  @media  (min-width: 768px) and (max-width: 979px) {
-	 
+
  }
- 
+
 /* Landscape phone to portrait tablet */
  @media  (max-width: 767px) {
  	/* VIEWS ********************************** */
@@ -493,13 +498,13 @@ img.right,
  	.view-forms .views-field-created {
 	 	display: none;
  	}
- } 
+ }
 /* Landscape phones and down */
  @media  (max-width: 480px) {
 
 }
 /* ----- Print ----------------------- */
-@media print 
+@media print
   {
   	#sidebar-first, div.tabs, div#global-footer, div#global-header, div#header, div#main-menu, div#block-workbench-block {
   		display: none;
