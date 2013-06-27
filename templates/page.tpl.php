@@ -1,7 +1,7 @@
 <?php
 // Set some variables
 $tbr_base_url = "http://tbrtest.tbr.edu";
-
+$tbr_base_theme = drupal_get_path('theme', 'THEME_NAME');
 ?>
 <div id="skipnav" class="element-invisible">
   <div class="container">
@@ -19,7 +19,7 @@ $tbr_base_url = "http://tbrtest.tbr.edu";
 <div id="global-header">
   <div class="container">
     <div class="row">
-      <div id="top-logo" class="span4"><a href="#" style="border: none;"><img src="/sites/all/themes/tbr_bootstrap/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a></div>
+      <div id="top-logo" class="span4"><a href="#" style="border: none;"><img src="<?php echo $tbr_base_theme; ?>/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a></div>
       <div id="top-menu" class="span8">
         <div id="block-user-0" class="block block-user">
           <div class="content clear-block">
@@ -65,7 +65,7 @@ $tbr_base_url = "http://tbrtest.tbr.edu";
                     </li>
                   </ul>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ $tbr_base_url = "http://tbrtest.tbr.edu";
         <div class="nav-collapse mainbar">
           <nav role="navigation">
             <?php if (($primary_nav) && empty($page['navigation'])): ?>
-            <?php print render($primary_nav); ?> 
+            <?php print render($primary_nav); ?>
             <!-- /#primary-menu -->
             <?php endif; ?>
             <?php if (!empty($page['navigation'])): ?>
@@ -281,7 +281,7 @@ $tbr_base_url = "http://tbrtest.tbr.edu";
           <div id="content-bottom" class="row-fluid"> <?php print render($page['content_bottom']); ?> </div>
           <?php endif; ?>
         </div>
-        <!-- /#content-wrap --> 
+        <!-- /#content-wrap -->
       </div>
       <!-- /#content -->
       <?php if ($page['sidebar_second']): ?>
@@ -337,4 +337,4 @@ $tbr_base_url = "http://tbrtest.tbr.edu";
 </div>
 
 <div id="toTop" class="btn btn-large icon-arrow-up"></div><!-- /#to-top -->
-<!-- /#global-footer --> 
+<!-- /#global-footer -->
