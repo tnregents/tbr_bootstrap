@@ -19,7 +19,7 @@ $tbr_base_theme = path_to_theme();
 <div id="global-header">
   <div class="container">
     <div class="row">
-      <div id="top-logo" class="span4"><a href="#" style="border: none;"><img src="<?php echo $tbr_base_theme; ?>/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a></div>
+      <div id="top-logo" class="span4"><a href="#" style="border: none;"><img src="/<?php echo $tbr_base_theme; ?>/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a></div>
       <div id="top-menu" class="span8">
         <div id="block-user-0" class="block block-user">
           <div class="content clear-block">
