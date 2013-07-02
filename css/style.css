@@ -91,22 +91,16 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 /* ----- Secondary Navigation -------- */
 #sidebar-first ul.menu.nav {
 	width: 100%;
-	margin: 30px 0 0;
+	margin: 0px;
 	padding: 0;
 	background-color: #fff;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-	box-shadow: 0 1px 4px rgba(0,0,0,.065);
 }
 #sidebar-first ul.menu.nav li {
 	list-style: none;
 }
 #sidebar-first ul.menu.nav > li > a {
 	display: block;
-	width: 190px 9;
+	width: 230px;
 	margin: 0 0 -1px;
 	padding: 8px 14px;
 	border: 1px solid #e5e5e5;
@@ -116,11 +110,15 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 	background-color: #0088cc;
 }
+#sidebar-first ul.menu.nav > li > ul {
+	margin-top: 1px;
+}
 #sidebar-first ul.menu.nav > li > ul > li > a {
 	display: block;
-	width: 190px 9;
-	margin: 0 0 -1px;
+	width: 200px;
+	margin: 0px 0px 0px 27px;
 	padding: 8px 14px;
+	border: none;
 	border-left: 4px solid #e5e5e5;
 }
 #sidebar-first ul.menu.nav > li > ul > li > a:before {
@@ -224,6 +222,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 }
 #main #content-wrapper {
 	margin:10px 10px;
+}
+#main #content-wrapper .field {
+	margin-bottom: 20px;
 }
 /* ----- node-policy-guideline --------- */
 .ds-1col.node.node-policy-guideline .label-above {
