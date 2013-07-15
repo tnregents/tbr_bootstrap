@@ -461,6 +461,11 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 #main #content-wrapper {
 	margin:10px 10px;
 }
+
+#main #content-wrapper #content-body .clearfix:before, #main #content-wrapper #content-body .clearfix:after {
+	content: normal;
+}
+
 #main #content-wrapper .field {
 	margin-bottom: 20px;
 }
