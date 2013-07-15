@@ -1,8 +1,9 @@
 <?php
 // Set some variables
-$tbr_base_url = "http://tbrtest.tbr.edu";
+//$tbr_base_url = "http://tbrtest.tbr.edu";
 $tbr_base_theme = path_to_theme();
 ?>
+
 <div id="skipnav" class="element-invisible">
   <div class="container">
     <p>Skip to:</p>
@@ -16,146 +17,156 @@ $tbr_base_theme = path_to_theme();
 </div>
 <!-- /#skipnav -->
 
+<div id="global-search">
+  <div class="container">
+	  <div class="global-search-inner">
+	  <form action="#" method="get" id="global-search-form">
+		  <fieldset>
+			  <div class="global-search-left">
+			  <input type="text" name="s" placeholder="Enter your search terms here">
+			  </div>
+			  <div class="global-search-right">
+			  <label for="people"><input type="radio" class="radiosearch" onclick="this.form.action='/people';" id="people" value="people" name="searchme">All of TBR.edu</label>
+			  <label for="people"><input type="radio" class="radiosearch" onclick="this.form.action='/people';" id="people" value="people" name="searchme">This Site Section</label>
+			  <label for="people"><input type="radio" class="radiosearch" onclick="this.form.action='/people';" id="people" value="people" name="searchme">System Office Staff</label>
+			  <button>Search</button>
+			  </div>
+		  </fieldset>
+	  </form>
+	  </div>
+  </div>
+</div>
 <div id="global-header">
   <div class="container">
+    <div id="global-nav" class="span8">
+      <div class="navbar global-nav-navi">
+        <div class="navbar-inner">
+          <ul class="nav">
+            <li><a href="#">Institutions</a></li>
+            <li><a href="#">Programs &amp; Initiatives</a></li>
+            <li class="show-search-list"><a href="#" id="show-search">Search <img src="/<?php echo $tbr_base_theme; ?>/images/search.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="top-logo" class="span4"> <a href="#" style="border: none;"><img src="/<?php echo $tbr_base_theme; ?>/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a> </div>
+    <!-- #top-logo --> 
+  </div>
+  <!-- .container --> 
+  
+</div>
+<!-- /#global-header --> 
+
+<?php if (!empty($page['emergency'])): ?>
+<div id="emergency-header">
+  <div class="container">
+    <div class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+      <?php print render($page['emergency']); ?> </div>
+    <!-- /.alert alert-error --> 
+  </div>
+  <!-- /.container --> 
+</div>
+<?php endif; ?>
+<!-- /#emergency-header -->
+
+
+
+<div id="header" class="clearfix">
+  <div class="container">
     <div class="row">
-      <div id="top-logo" class="span4"><a href="#" style="border: none;"><img src="/<?php echo $tbr_base_theme; ?>/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a></div>
-      <div id="top-menu" class="span8">
-        <div id="block-user-0" class="block block-user">
-          <div class="content clear-block">
-            <div class="navbar">
-                <div class="nav-collapse collapse" style="height: 0px;">
-                  <ul class="nav">
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrative Offices<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-						<li><a href="<?php echo $tbr_base_url; ?>/chancellor/" title="Office of the Chancellor">Office of Chancellor</a></li>
-						<li><a href="/WorkArea/linkit.aspx?LinkIdentifier=ID&amp;ItemID=1172">Office of Academic Affairs</a></li>
-						<li><a href="/WorkArea/linkit.aspx?LinkIdentifier=ID&amp;ItemID=1174">Office of Effectiveness &amp; Strategic Initiatives</a></li>
-						<li><a href="/WorkArea/linkit.aspx?LinkIdentifier=ID&amp;ItemID=1176">Office of Administration and Facilities Development</a></li>
-						<li><a href="<?php echo $tbr_base_url; ?>/business/" title="Office of Business and Finance">Office of Business and Finance</a></li>
-						<li><a href="/WorkArea/linkit.aspx?LinkIdentifier=ID&amp;ItemID=7674">Office of Community Colleges</a></li>
-						<li><a href="/WorkArea/linkit.aspx?LinkIdentifier=ID&amp;ItemID=1118">Office of General Counsel</a</li>
-						<li><a href="/WorkArea/linkit.aspx?LinkIdentifier=ID&amp;ItemID=1182">Office of Information Technology</a></li>
-						<li><a href="/WorkArea/linkit.aspx?LinkIdentifier=ID&amp;ItemID=322">Office of Tennessee Technology Centers</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Institutions<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-	                      <li><a href="#">Universities</a></li>
-	                      <li><a href="#">Community Colleges</a></li>
-	                      <li><a href="#">Technology Centers</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs &amp; Initatives<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
+      <div id="logo" class="site-logo span4"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> 
+      	<img src="/<?php echo $tbr_base_theme; ?>/images/tbr_seal_edu.png" alt="<?php print $site_name; ?>" role="presentation" /> </a> 
+      </div>
+      <div id="main-menu" class="span9">
+        <div class="navbar main-menu-navi">
+          <div class="navbar-inner"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".mainbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <div class="nav-collapse mainbar">
+              <nav role="navigation">
+              	<?php //print render($primary_nav); ?> 
+              <ul class="menu nav">
+              	<?php /*<li class="dropdown first">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Board of Regents <b class="caret"></b></a>
+              		<ul class="dropdown-menu">
+              			<li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li class="divider"></li>
                         <li class="nav-header">Nav header</li>
                         <li><a href="#">Separated link</a></li>
                         <li><a href="#">One more separated link</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">QuickLinks<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-						<li><a href="<?php echo $tbr_base_url; ?>/communications/news" title="News">News</a></li>
-						<li><a href="<?php echo $tbr_base_url; ?>/purchasing" title="Purchasing and Contracts">Purchasing and Contracts</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
+                    </ul>
+              	</li>
+              	*/ ?>
+              	<li><a href="/">Board of Regents</a></li>
+              	<li><a href="/">Chancellor</a></li>
+              	<li><a href="/">Academics</a></li>
+              	<li><a href="/">Administration</a></li>
+              	<li><a href="/">Policies &amp; Guidelines</a></li>              	
+              	<li><a href="/">News & Reports</a></li>
+              	<li><a href="/">Especially For...</a></li> 	  
+			  </ul>
+			
+              <!-- /#primary-menu -->
+              <?php if (!empty($page['navigation'])): ?>
+              <?php print render($page['navigation']); ?>
+              <?php endif; ?>
+                          </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!-- /#header -->
 
-<!-- /#global-header -->
-
-<!--
-<div id="secondary-menu" class="clearfix">
-  <ul class="menu nav">
-    <li class="first leaf"><a href="/user">Board of Regents</a></li>
-    <li class="leaf"><a href="/user">The Chancellor</a></li>
-    <li class="last leaf"><a href="/user/logout">Institutions</a></li>
-  </ul>
-</div>
-<!-- /#secondary-menu -->
-
-<?php if (!empty($page['emergency'])): ?>
-<div id="emergency-header">
-	<div class="container">
-		<div class="alert alert-error">
-		<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
-			<?php print render($page['emergency']); ?>
-		</div> <!-- /.alert alert-error -->
-	</div> <!-- /.container -->
-</div>
-<?php endif; ?>
-<!-- /#emergency-header -->
-
-<?php if ($logo || $site_name || $site_slogan || ($page['header']) || ($page['search_box'])): ?>
+<?php /*
 <div id="header" class="clearfix">
   <div class="container">
     <div class="row">
-      <div class="<?php if ($page['search_box']): print 'span8'; else: print 'span12'; endif; ?>">
-        <?php if ($page['header']): ?>
-        <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
-        <!-- /#header-content -->
-        <?php endif; ?>
+      <div id="logo" class="site-logo span4"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> 
+      	<img src="/<?php echo $tbr_base_theme; ?>/images/tbr_seal_edu.png" alt="<?php print $site_name; ?>" role="presentation" /> </a> 
+      </div>
+      <div id="main-menu" class="span9">
+        <div class="navbar">
+          <div class="navbar-inner"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".mainbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <?php if ($primary_nav || !empty($page['navigation'])): ?>
+            <div class="nav-collapse mainbar">
+              <nav role="navigation">
+              <?php if (($primary_nav) && empty($page['navigation'])): ?>
+              <?php print render($primary_nav); ?> 
+              <!-- /#primary-menu -->
+              <?php endif; ?>
+              <?php if (!empty($page['navigation'])): ?>
+              <?php print render($page['navigation']); ?>
+              <?php endif; ?>
+              
+            </div>
+            <?php endif; ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <!-- /#header -->
-<?php endif; ?>
 
-<?php if ($main_menu): ?>
-<div id="main-menu" class="clearfix">
+*/ ?>
+
+<?php if ($page['header_unit']): ?>
+<div id="header-unit" class="clearfix">
   <div class="container">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".mainbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-        <?php if ($primary_nav || !empty($page['navigation'])): ?>
-        <div class="nav-collapse mainbar">
-          <nav role="navigation">
-            <?php if (($primary_nav) && empty($page['navigation'])): ?>
-            <?php print render($primary_nav); ?>
-            <!-- /#primary-menu -->
-            <?php endif; ?>
-            <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-            <?php endif; ?>
-            <ul class="nav pull-right">
-	        <?php
-	        if (!user_is_logged_in()) : ?>
-	        <li><a href="/user">Sign Up</a></li>
-	        <li class="divider-vertical"></li>
-            <li class="dropdown">
-            	<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-            	<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-	            	<?php print render($page['login']); ?>
-	            	</div>
-	        </li>
-	        <?php endif; ?>
-	        <?php if (user_is_logged_in()) : ?>
-	        <li><a href="/user/logout">Logout</a></li>
-	        <?php endif; ?>
-        </ul>
-          </nav>
-        </div>
-        <?php endif; ?>
-      </div>
-    </div>
+  	<div id="header-unit-inner" class="row">
+  		<div class="header-unit-content">
+	  		<?php print render($page['header_unit']); ?>
+  		</div>
+  	</div>
   </div>
 </div>
-<!-- /#main-menu -->
+<!-- /#header_unit -->
 <?php endif; ?>
+
+<!--/#header-unit -->
 
 <div id="main" class="clearfix">
   <div class="container">
@@ -172,6 +183,18 @@ $tbr_base_theme = path_to_theme();
       <?php if ($page['sidebar_first']): ?>
       <div id="sidebar-first" class="sidebar span3">
         <div class="row-fluid"><?php print render($page['sidebar_first']); ?></div>
+        
+        <?php if (user_is_logged_in()) : ?>
+
+        <ul class="menu nav">
+        <li><a href="/user/logout">Logout</a></li>
+        </ul>
+<?php endif; ?>
+
+      
+      
+      
+      
       </div>
       <!-- /#sidebar-first -->
       <?php endif; ?>
@@ -281,7 +304,7 @@ $tbr_base_theme = path_to_theme();
           <div id="content-bottom" class="row-fluid"> <?php print render($page['content_bottom']); ?> </div>
           <?php endif; ?>
         </div>
-        <!-- /#content-wrap -->
+        <!-- /#content-wrap --> 
       </div>
       <!-- /#content -->
       <?php if ($page['sidebar_second']): ?>
@@ -300,6 +323,9 @@ $tbr_base_theme = path_to_theme();
   </div>
 </div>
 <!-- /#main, /#main-wrapper -->
+<div id="footer-logo">
+	<img src="/<?php echo $tbr_base_theme; ?>/images/footer_logo.png" alt="TBR Seal" title="TBR Seal">
+</div>
 <?php if ($page['footer']): ?>
 <div id="footer" class="clearfix">
   <div class="container">
@@ -309,9 +335,21 @@ $tbr_base_theme = path_to_theme();
 <!-- /#footer -->
 <?php endif; ?>
 <div id="global-footer" style="position: static;">
+	<div id="institution-logos">
+      	<div class="container institutions">
+		  	<div class="row">
+			  	<div class="span12">
+			  		<div id="institution-logos-inner">
+				  		<img src="/<?php echo $tbr_base_theme; ?>/images/institution_logos.png" alt="TBR Institutions" title="TBR Seal">
+			  		</div>
+				</div>
+			</div>
+		</div>
+  </div>
+
+  <div id="other-footer">
   <div class="container">
     <div class="row">
-      <div id="bottom-logo" class="span2"><a href="http://www.tbr.edu" style="border: none;"><img src="/sites/all/themes/tbr_bootstrap/logo.png" alt="Tennessee Board of Regents"></a></div>
       <div id="bottom-text" class="span10">
         <div id="bottom-menu" class="clear-block">
           <ul>
@@ -334,7 +372,8 @@ $tbr_base_theme = path_to_theme();
       </div>
     </div>
   </div>
+  </div>
 </div>
-
-<div id="toTop" class="btn btn-large icon-arrow-up"></div><!-- /#to-top -->
-<!-- /#global-footer -->
+<div id="toTop" class="btn btn-large icon-arrow-up"></div>
+<!-- /#to-top --> 
+<!-- /#global-footer --> 

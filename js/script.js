@@ -1,18 +1,87 @@
-//Cosmetics
+(function ($) {
 
-$(document).ready(function() {
-   //Add twitter tooltip to images with data-toggle=tooltip
+    $(document).ready(function () {
+
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop()) {
+                $('#toTop').fadeIn();
+            } else {
+                $('#toTop').fadeOut();
+            }
+        });
+
+        $("#toTop").click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1000);
+        });
+
+        $('input[type=text]').attr('x-webkit-speech', 'x-webkit-speech');
+
+        // Add section-home class to the first li element in the sidebar     
+        $("#sidebar-first ul.menu li.first:first").addClass('section-home');
+        //Add the twitter home button to the li with section-home class     
+        $("li.section-home a").prepend('<i class="icon-home">');
+
+
+        $('#global-search').animate({
+            marginTop: '-50px'
+        }, 0);
+        $('#show-search').toggle(
+            function () {
+                $('#global-search').animate({
+                    marginTop: '0'
+                }, 500);
+                $('.global-search-left input').focus();
+            },
+            function () {
+                $('#global-search').animate({
+                    marginTop: '-50px'
+                }, 500);
+            });
+
+        $.breakpoint({
+            condition: function () {
+                return window.matchMedia('only screen and (max-width:480px)').matches;
+            },
+            first_enter: function () {
+
+            },
+            enter: function () {
+                $("#main-menu .main-menu-navi").appendTo("#global-nav");
+                $("#global-nav .main-menu-navi ul").prepend('<li><a href="#">Institutions</a></li><li><a href="#">Programs &amp; Initiatives</a></li>');
+                $("#sidebar-first").appendTo("#content");
+
+
+            },
+            exit: function () {
+                $("#global-nav .main-menu-navi ul li:first").remove();
+                $("#global-nav .main-menu-navi ul li:first").remove();
+                $("#global-nav .main-menu-navi").appendTo("#main-menu");
+                $("#sidebar-first").prependTo("#main-content");
+
+            }
+        });
+
+
+    });
+
+
+
+
+    //Add twitter tooltip to images with data-toggle=tooltip
     $("img[data-toggle=tooltip]")
         .tooltip({
             offset: 10
         })
-        
-   // Add section-home class to the first li element in the sidebar     
-   $("#sidebar-first li.first:first").addClass('section-home');
-   //Add the twitter home button to the li with section-home class     
-   $("li.section-home a").prepend('<i class="icon-home">');
-     
-      $("div.view-job-opportunities-at-tbr-universities form#views-exposed-form-job-opportunities-at-tbr-universities-page input#edit-title").replaceWith(' \
+
+    // Add section-home class to the first li element in the sidebar     
+    $("#sidebar-first li.first:first").addClass('section-home');
+    //Add the twitter home button to the li with section-home class     
+    $("li.section-home a").prepend('<i class="icon-home">');
+
+    $("div.view-job-opportunities-at-tbr-universities form#views-exposed-form-job-opportunities-at-tbr-universities-page input#edit-title").replaceWith(' \
    <select name="title" id="title" size="1"> \
    <option value="">All</option> \
    <option value="UofM">Memphis</option> \
@@ -21,49 +90,53 @@ $(document).ready(function() {
    <option value="TSU">TSU</option> \
    <option value="TTU">TTU</option> \
    <option value="MTSU">MTSU</option> \
-   </select>');  
-  
-});
-/*
-// Sticky Footer
-function positionFooter() {
-  var Footer = $("#footer");
-  if ((($(document.body).height() + Footer.height()) < $(window).height() && Footer.css("position") == "fixed") || ($(document.body).height() < $(window).height() && Footer.css("position") != "fixed")) {
-	Footer.css({ position: "fixed", bottom: "120px" });
-  }
-  else {
-	Footer.css({ position: "static" });
-  }
-}
+   </select>');
 
-// Sticky Global Footer
-function positionGlobalfooter() {
-  var Globalfooter = $("#global-footer");
-  if ((($(document.body).height() + Globalfooter.height()) < $(window).height() && Globalfooter.css("position") == "fixed") || ($(document.body).height() < $(window).height() && Globalfooter.css("position") != "fixed")) {
-	Globalfooter.css({ position: "fixed", bottom: "0px" });
-  }
-  else {
-	Globalfooter.css({ position: "static" });
-  }
-}
 
-$(document).ready(function () {
-  positionFooter();
-  $(window).scroll(positionFooter);
-  $(window).resize(positionFooter);
-  $(window).load(positionFooter); 
-  positionGlobalfooter();
-  $(window).scroll(positionGlobalfooter);
-  $(window).resize(positionGlobalfooter);
-  $(window).load(positionGlobalfooter);
-});;
-*/
+    //Sticky Footer
 
-// That lovely 'back to top' button
-jQuery(function() {
-	
-	$('input[type=text]').attr('x-webkit-speech', 'x-webkit-speech');
+    function positionFooter() {
+        var Footer = $("#footer");
+        if ((($(document.body).height() + Footer.height()) < $(window).height() && Footer.css("position") == "fixed") || ($(document.body).height() < $(window).height() && Footer.css("position") != "fixed")) {
+            Footer.css({
+                position: "fixed",
+                bottom: "120px"
+            });
+        } else {
+            Footer.css({
+                position: "static"
+            });
+        }
+    }
 
+    // Sticky Global Footer
+
+    function positionGlobalfooter() {
+        var Globalfooter = $("#global-footer");
+        if ((($(document.body).height() + Globalfooter.height()) < $(window).height() && Globalfooter.css("position") == "fixed") || ($(document.body).height() < $(window).height() && Globalfooter.css("position") != "fixed")) {
+            Globalfooter.css({
+                position: "fixed",
+                bottom: "0px"
+            });
+        } else {
+            Globalfooter.css({
+                position: "static"
+            });
+        }
+    }
+
+    $(document).ready(function () {
+        positionFooter();
+        $(window).scroll(positionFooter);
+        $(window).resize(positionFooter);
+        $(window).load(positionFooter);
+        positionGlobalfooter();
+        $(window).scroll(positionGlobalfooter);
+        $(window).resize(positionGlobalfooter);
+        $(window).load(positionGlobalfooter);
+    });;
+
+    /*
 	// Menu Stuff
 	
 	
@@ -74,12 +147,12 @@ jQuery(function() {
     //alert('There are '+linkCount+' links in the left-hand nav.');
 
     // Set expanded items to collapsed by default.
-    
+
     $("#block-menu-block-2 ul.menu li.expanded:not('.active-trail') > a").next("ul").css("display", "none");
     $("#block-menu-block-2 ul.menu li.expanded:not('.active-trail')").addClass("collapsed").removeClass("expanded");
 
     // Toggle the expanded/collapsed state of the list item.
-    
+
     $("#block-menu-block-2 ul.menu li.collapsed > a").click(function() {
       // Mark the parent list item as expanded.
       $(this).parent().toggleClass('collapsed').toggleClass('expanded');
@@ -103,5 +176,9 @@ jQuery(function() {
       return false;
     });
   //}
-    
-}); 
+*/
+
+
+
+
+})(jQuery);

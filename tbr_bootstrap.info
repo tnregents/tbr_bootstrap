@@ -5,9 +5,11 @@ core = 7.x
 version = 1.0
 
 stylesheets[all][] = css/style.css
+scripts[] = js/breakpoints.js
 scripts[] = js/script.js
 
 regions[header] = Header
+regions[header_unit] = Unit Header
 regions[navigation] = Navigation
 regions[search_box] = Search Box
 regions[login] = Login Box
