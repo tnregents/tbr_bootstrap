@@ -11,9 +11,27 @@ function tbr_bootstrap_html_head_alter(&$head_elements) {
 /**
  * Add subdomain class to body eg. policies-tbr-edu 
  */
-function tbr_bootstrap_preprocess_html(&$variables) {
-  $variables['classes_array'][] = str_replace('.', '-', $_SERVER['SERVER_NAME']);
+ 
+ function tbr_bootstrap_preprocess_html(&$variables) {
+  $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
+  
+  //add host class in the body
+  $variables['classes_array'][] = $tbr_host;
+
+  $filename = "host-{$tbr_host}.css";
+  $path = drupal_get_path("theme", "tbr_bootstrap");
+
+  $options = array();
+
+  if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/{$path}/css/{$filename}")) {
+    drupal_add_css("{$path}/css/{$filename}", $options);
+  }
+
 }
+
+/* function tbr_bootstrap_preprocess_html(&$variables) {
+  $variables['classes_array'][] = str_replace('.', '-', $_SERVER['SERVER_NAME']);
+} */
 
 /**
 * Allow themable breadcrumbs
@@ -38,7 +56,8 @@ function tbr_bootstrap_breadcrumb($variables) {
    }
    else {
      return t("Home");
-   }
+   }   
+   
  }
 
 ?>

@@ -185,11 +185,7 @@ $tbr_base_theme = path_to_theme();
         <div class="row-fluid"><?php print render($page['sidebar_first']); ?></div>
         
         <?php if (user_is_logged_in()) : ?>
-
-        <ul class="menu nav">
-        <li><a href="/user/logout">Logout</a></li>
-        </ul>
-<?php endif; ?>
+		<?php endif; ?>
 
       
       
