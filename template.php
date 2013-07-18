@@ -37,6 +37,9 @@ function tbr_bootstrap_html_head_alter(&$head_elements) {
 * Allow themable breadcrumbs
 */
 function tbr_bootstrap_breadcrumb($variables) {
+   
+   $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
+   
    if (count($variables['breadcrumb']) > 0) {
      $lastitem = sizeof($variables['breadcrumb']);
      $title = drupal_get_title();
@@ -53,9 +56,9 @@ function tbr_bootstrap_breadcrumb($variables) {
      }
      $crumbs .= '</ul>';
    return $crumbs;
-   }
+   }   
    else {
-     return t("Home");
+     return t("");
    }   
    
  }

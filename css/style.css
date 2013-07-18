@@ -30,9 +30,6 @@ tan - #e4dece
 .front .title {
 	display: none;
 }
-.policies-current-tbrweb05-tbr-edu .title {
-	display: block;
-}
 ul li.leaf {
   list-style: none;
   list-style-image: none;
@@ -64,6 +61,10 @@ body, input, button, select, textarea {
 h1 {
 	font-weight: 600;
 	font-size: 34px;
+}
+h2 {
+	font-weight: 600;
+	font-size: 26px;
 }
 #content, #content-wrapper li {
 	line-height: 30px;
@@ -114,6 +115,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	margin-top: 0;
 	clear: both;
 	color: #eaeaea;
+	overflow: hidden;
 }
 .global-search-left {
 	display: block;
@@ -180,6 +182,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	text-transform: uppercase;
 	font-size: 15px;
+}
+#global-header #top-logo {
+ 	float: right;
 }
 /* ----- Header Region --------------- */
 #header {
@@ -452,9 +457,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 #main #sidebar-first {
 	margin-top: 10px;
 }
-#main #sidebar-first .block {
-	margin-left: 26px;
-}
 #main #content-wrapper {
 	margin:10px 10px;
 }
@@ -467,7 +469,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 #main #content-wrapper li {
 	margin: 0 0 1em;
 }
-#main #content-wrapper .horizontal-tabs-list li {
+#main #content-wrapper .horizontal-tabs-list li, #main #content-wrapper .nav-tabs li {
 	line-height: 20px;
 	margin: 0;
 	padding: 0;
@@ -646,26 +648,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 table.views-table {
 	width: 100%;
 }
-.views-field-field-policy-area, .views-field-field-policy-name, .views-field-field-policy-number {
-	white-space: nowrap;
-}
-.view-taxonomy-term-for-policies .views-field-php, .view-policy-and-guideline-purposes .views-field-php {
-	width: 220px;
-}
-.view-taxonomy-term-for-policies .views-field-php .division_term_icon {
-	float: left;
-	margin-left: 4px;
-}
-.view-taxonomy-term-for-policies .views-field-php .btn, .view-policy-and-guideline-purposes .views-field-php .btn {
-	padding: 4px 4px;
-}
-
-.view-taxonomy-term-for-policies .view-footer .term_icon {
-	float: left;
-	font-size: 14px;
-	padding-right: 16px;
-}
-
 
 /* ------ TBR Staff Directory --------- */
 .view-tbr-staff-directory table {
@@ -738,11 +720,21 @@ img.right,
     display:none;
 }
 
-
+.cse .gsc-control-cse, .gsc-control-cse {
+	padding: 0 !important;
+}
+#cse table td {
+	border: 0;
+}
+.google-cse input[id="edit-keys"] {
+	width: 90%;
+} 
 /* MEDIA QUERIES ************************* */
 /* ----- Responsive ------------------ */
  @media  (min-width: 1382px) {
-
+	 #main #sidebar-first .block {
+		 margin-left: 26px;
+	}
  	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container,div#header-unit .container {
 	 	width: 1260px;
 	 }
@@ -756,6 +748,9 @@ img.right,
 
 }
  @media  (min-width: 979px) and (max-width: 1381px) {
+ 	#main #sidebar-first .block {
+		margin-left: 26px;
+	}
 	body {
 		font-size: 14px;
 	}
@@ -783,8 +778,23 @@ img.right,
 
 /* Portrait tablet to landscape and desktop */
  @media  (min-width: 768px) and (max-width: 979px) {
-	 
+	 #main .span3, #main .span9 {
+		 width: 100%;
+		 float: none;
 	}
+	#header #main-menu .navbar .nav {
+		float: none;
+		width: 100%;
+		font-size: 14px;
+	}
+	#main #sidebar-first .block {
+		margin-right: 20px;
+	}
+	#main #content-wrapper {
+		margin: 10px 30px 10px 10px;
+	}
+	 
+  }
 }
 
 /* Landscape phone to portrait tablet */

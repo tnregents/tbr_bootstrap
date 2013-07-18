@@ -2,6 +2,7 @@
 // Set some variables
 //$tbr_base_url = "http://tbrtest.tbr.edu";
 $tbr_base_theme = path_to_theme();
+$tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
 ?>
 
 <div id="skipnav" class="element-invisible">
@@ -20,16 +21,22 @@ $tbr_base_theme = path_to_theme();
 <div id="global-search">
   <div class="container">
 	  <div class="global-search-inner">
-	  <form action="#" method="get" id="global-search-form">
+	  <form action="/search/google/" method="get" id="global-search-form">
 		  <fieldset>
 			  <div class="global-search-left">
-			  <input type="text" name="s" placeholder="Enter your search terms here">
+			  <input name="q" type="text" placeholder="Enter your search terms here">
 			  </div>
 			  <div class="global-search-right">
-			  <label for="people"><input type="radio" class="radiosearch" onclick="this.form.action='/people';" id="people" value="people" name="searchme">All of TBR.edu</label>
-			  <label for="people"><input type="radio" class="radiosearch" onclick="this.form.action='/people';" id="people" value="people" name="searchme">This Site Section</label>
-			  <label for="people"><input type="radio" class="radiosearch" onclick="this.form.action='/people';" id="people" value="people" name="searchme">System Office Staff</label>
-			  <button>Search</button>
+			  <label for="people"><input type="radio" class="radiosearch" id="search-all-tbr" value="" name="sitesearch" checked="yes">All of TBR.edu</label>
+			  <!--
+			  <?php if ($host = "policies-tbr-edu") { ?>
+			  <label for="emerging"><input type="radio" class="radiosearch" id="search-emerging-tech" value="site:policies.tbr.edu" name="sitesearch">Emerging Tech</label>  
+			  <?php } ?>
+			  -->
+			  <label for="emerging"><input type="radio" class="radiosearch" id="search-emerging-tech" value="site:emergingtech.tbr.edu" name="sitesearch">Emerging Tech</label>
+			  <label for="people"><input type="radio" class="radiosearch" id="search-site-section" value="xxxx" name="sitesearch">This Site Section</label>
+			  <label for="people"><input type="radio" class="radiosearch" id="search-people" value="search-people" name="sitesearch">System Office Staff</label>
+			  <button id="do-site-search">Search</button>
 			  </div>
 		  </fieldset>
 	  </form>
@@ -42,14 +49,20 @@ $tbr_base_theme = path_to_theme();
       <div class="navbar global-nav-navi">
         <div class="navbar-inner">
           <ul class="nav">
-            <li><a href="#">Institutions</a></li>
-            <li><a href="#">Programs &amp; Initiatives</a></li>
+            <li><a href="http://tbr.edu/schools/default.aspx?id=2436">Institutions</a></li>
+            <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs &amp; Initiatives <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Emerging Technologies &amp; Mobilization</a></li>
+                          <li><a href="#">TN Transfer Pathways</a></li>
+                       </ul>
+                      </li>
             <li class="show-search-list"><a href="#" id="show-search">Search <img src="/<?php echo $tbr_base_theme; ?>/images/search.png"></a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div id="top-logo" class="span4"> <a href="#" style="border: none;"><img src="/<?php echo $tbr_base_theme; ?>/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a> </div>
+    <div id="top-logo" class="span4"> <a href="http://www.tbr.edu" style="border: none;"><img src="/<?php echo $tbr_base_theme; ?>/images/wordmark.png" width="399" height="14" alt="Tennessee Board of Regents"></a> </div>
     <!-- #top-logo --> 
   </div>
   <!-- .container --> 
@@ -75,7 +88,8 @@ $tbr_base_theme = path_to_theme();
 <div id="header" class="clearfix">
   <div class="container">
     <div class="row">
-      <div id="logo" class="site-logo span4"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> 
+      <?php /* <div id="logo" class="site-logo span4"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> */ ?>
+      <div id="logo" class="site-logo span4"> <a href="http://www.tbr.edu" title="<?php print t('Home'); ?>" rel="home"> 
       	<img src="/<?php echo $tbr_base_theme; ?>/images/tbr_seal_edu.png" alt="<?php print $site_name; ?>" role="presentation" /> </a> 
       </div>
       <div id="main-menu" class="span9">
@@ -98,13 +112,13 @@ $tbr_base_theme = path_to_theme();
                     </ul>
               	</li>
               	*/ ?>
-              	<li><a href="/">Board of Regents</a></li>
-              	<li><a href="/">Chancellor</a></li>
-              	<li><a href="/">Academics</a></li>
-              	<li><a href="/">Administration</a></li>
-              	<li><a href="/">Policies &amp; Guidelines</a></li>              	
-              	<li><a href="/">News & Reports</a></li>
-              	<li><a href="/">Especially For...</a></li> 	  
+              	<li><a href="http://tbr.edu/tbrtest/">Board of Regents</a></li>
+              	<li><a href="http://tbr.edu/offices/chancellor.aspx?id=802">Chancellor</a></li>
+              	<li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
+              	<li><a href="http://tbr.edu/offices/default.aspx?id=1198">Administration</a></li>
+              	<li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>              	
+              	<li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
+              	<!--<li><a href="/">Especially For...</a></li>-->
 			  </ul>
 			
               <!-- /#primary-menu -->
@@ -357,8 +371,8 @@ $tbr_base_theme = path_to_theme();
           </ul>
         </div>
         <div id="copyright-eeo">
-          <p>The Tennessee Board of Regents (TBR) is the nation's sixth largest higher education system, governing 46 post-secondary educational institutions.
-            The TBR system includes six universities, 13 two-year colleges and 27 technology centers, providing programs to more than 200,000 students across the state.</p>
+          <p>The Tennessee Board of Regents (TBR) is one of the nation's largest higher education systems, governing 46 post-secondary educational institutions.
+            The TBR system includes six universities, 13 two-year colleges and 27 colleges of applied technology, providing programs to more than 240,000 students across the state.</p>
           <p>The TBR is an AA/EEO employer and does not discriminate on the basis of race, color, national origin, sex, disability, or age in its programs and activities.
             Full Non-Discrimination Policy.</p>
         </div>

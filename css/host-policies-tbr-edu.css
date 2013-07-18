@@ -1,0 +1,22 @@
+.policies-tbrweb05-tbr-edu .title {
+	display: block;
+}
+.views-field-field-policy-area, .views-field-field-policy-name, .views-field-field-policy-number {
+	white-space: nowrap;
+}
+.view-taxonomy-term-for-policies .views-field-php, .view-policy-and-guideline-purposes .views-field-php {
+	width: 220px;
+}
+.view-taxonomy-term-for-policies .views-field-php .division_term_icon {
+	float: left;
+	margin-left: 4px;
+}
+.view-taxonomy-term-for-policies .views-field-php .btn, .view-policy-and-guideline-purposes .views-field-php .btn {
+	padding: 4px 4px;
+}
+
+.view-taxonomy-term-for-policies .view-footer .term_icon {
+	float: left;
+	font-size: 14px;
+	padding-right: 16px;
+}

@@ -11,11 +11,23 @@
             }
         });
 
+        $("#do-site-search").click(function(e) {
+	         e.preventDefault();
+	         var globalsearchterm = $('.global-search-left input[type=text]').val();
+	         var halla = $("#global-search input:radio:checked").val();
+			 //var action = '/search/google/site%3Aemergingtech.tbr.edu%20' + globalsearchterm;
+			 //var action = '/search/google/site.emergingtech.tbr.edu' + ' ' + globalsearchterm;
+			 var action = '/search/google/' + halla + ' ' + globalsearchterm;			
+			window.location.href = action;	 		 
+        });
+        
         $("#toTop").click(function () {
             $("html, body").animate({
                 scrollTop: 0
             }, 1000);
         });
+        
+        $("#edit-keys").removeAttr('style');
 
         $('input[type=text]').attr('x-webkit-speech', 'x-webkit-speech');
 
@@ -52,8 +64,6 @@
                 $("#main-menu .main-menu-navi").appendTo("#global-nav");
                 $("#global-nav .main-menu-navi ul").prepend('<li><a href="#">Institutions</a></li><li><a href="#">Programs &amp; Initiatives</a></li>');
                 $("#sidebar-first").appendTo("#content");
-
-
             },
             exit: function () {
                 $("#global-nav .main-menu-navi ul li:first").remove();
