@@ -1,4 +1,6 @@
-.policies-tbrweb05-tbr-edu .title {
+/* policies.tbr.edu */
+
+.front .title {
 	display: block;
 }
 .views-field-field-policy-area, .views-field-field-policy-name, .views-field-field-policy-number {
@@ -19,4 +21,51 @@
 	float: left;
 	font-size: 14px;
 	padding-right: 16px;
+}
+.node-policy-guideline ol {
+	list-style: upper-roman;
+}
+.node-policy-guideline ol ol {
+	list-style: upper-alpha;
+}
+.node-policy-guideline ol ol ol {
+	list-style: decimal;
+}
+.node-policy-guideline ol ol ol ol {
+	list-style: lower-alpha;
+}
+.node-policy-guideline ol ol ol ol ol {
+	list-style-type: none;
+}
+.node-policy-guideline ol ol ol ol ol li:before {
+	content: "(" counter(section, decimal) ") ";
+}
+.node-policy-guideline ol ol ol ol ol li {
+	counter-increment: section;
+}
+.node-policy-guideline ol ol ol ol ol ol {
+	list-style-type: none;
+}
+.node-policy-guideline ol ol ol ol ol ol li:before {
+	content: "(" counter(section2, lower-alpha) ") ";
+}
+.node-policy-guideline ol ol ol ol ol ol li {
+	counter-increment: section2;
+}
+.node-policy-guideline ol ol ol ol ol ol ol {
+	list-style-type: none;
+}
+.node-policy-guideline ol ol ol ol ol ol ol li:before {
+	content: "(" counter(section3, lower-roman) ") ";
+}
+.node-policy-guideline ol ol ol ol ol ol ol li {
+	counter-increment: section3;
+}
+.group-topics .list-columns li {
+	font-size: 14px;
+	line-height: normal !important;
+}
+.group-topics .list-columns li a:hover {
+	text-decoration: underline;
+	
 }

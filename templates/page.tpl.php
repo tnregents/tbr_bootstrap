@@ -1,8 +1,9 @@
 <?php
-// Set some variables
-//$tbr_base_url = "http://tbrtest.tbr.edu";
+// Set some variables to make my life a little better
+
 $tbr_base_theme = path_to_theme();
 $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
+
 ?>
 
 <div id="skipnav" class="element-invisible">
@@ -20,29 +21,39 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
 
 <div id="global-search">
   <div class="container">
-	  <div class="global-search-inner">
-	  <form action="/search/google/" method="get" id="global-search-form">
-		  <fieldset>
-			  <div class="global-search-left">
-			  <input name="q" type="text" placeholder="Enter your search terms here">
-			  </div>
-			  <div class="global-search-right">
-			  <label for="people"><input type="radio" class="radiosearch" id="search-all-tbr" value="" name="sitesearch" checked="yes">All of TBR.edu</label>
-			  <!--
+    <div class="global-search-inner">
+      <form action="/search/google/" method="get" id="global-search-form">
+        <fieldset>
+          <div class="global-search-left">
+            <input name="q" type="text" placeholder="Enter your search terms here">
+          </div>
+          <div class="global-search-right">
+            <label for="people">
+              <input type="radio" class="radiosearch" id="search-all-tbr" value="" name="sitesearch" checked="yes">
+              All of TBR.edu</label>
+            <!--
 			  <?php if ($host = "policies-tbr-edu") { ?>
 			  <label for="emerging"><input type="radio" class="radiosearch" id="search-emerging-tech" value="site:policies.tbr.edu" name="sitesearch">Emerging Tech</label>  
 			  <?php } ?>
 			  -->
-			  <label for="emerging"><input type="radio" class="radiosearch" id="search-emerging-tech" value="site:emergingtech.tbr.edu" name="sitesearch">Emerging Tech</label>
-			  <label for="people"><input type="radio" class="radiosearch" id="search-site-section" value="xxxx" name="sitesearch">This Site Section</label>
-			  <label for="people"><input type="radio" class="radiosearch" id="search-people" value="search-people" name="sitesearch">System Office Staff</label>
-			  <button id="do-site-search">Search</button>
-			  </div>
-		  </fieldset>
-	  </form>
-	  </div>
+            <label for="emerging">
+              <input type="radio" class="radiosearch" id="search-emerging-tech" value="site:emergingtech.tbr.edu" name="sitesearch">
+              Emerging Tech</label>
+            <label for="people">
+              <input type="radio" class="radiosearch" id="search-site-section" value="xxxx" name="sitesearch">
+              This Site Section</label>
+            <label for="people">
+              <input type="radio" class="radiosearch" id="search-people" value="search-people" name="sitesearch">
+              System Office Staff</label>
+            <button id="do-site-search">Search</button>
+          </div>
+        </fieldset>
+      </form><!-- /form#global-search-form -->
+    </div>
   </div>
 </div>
+<!-- /#global-search -->
+
 <div id="global-header">
   <div class="container">
     <div id="global-nav" class="span8">
@@ -50,13 +61,12 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
         <div class="navbar-inner">
           <ul class="nav">
             <li><a href="http://tbr.edu/schools/default.aspx?id=2436">Institutions</a></li>
-            <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs &amp; Initiatives <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Emerging Technologies &amp; Mobilization</a></li>
-                          <li><a href="#">TN Transfer Pathways</a></li>
-                       </ul>
-                      </li>
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs &amp; Initiatives <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Emerging Technologies &amp; Mobilization</a></li>
+                <li><a href="#">TN Transfer Pathways</a></li>
+              </ul>
+            </li>
             <li class="show-search-list"><a href="#" id="show-search">Search <img src="/<?php echo $tbr_base_theme; ?>/images/search.png"></a></li>
           </ul>
         </div>
@@ -66,9 +76,8 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
     <!-- #top-logo --> 
   </div>
   <!-- .container --> 
-  
 </div>
-<!-- /#global-header --> 
+<!-- /#global-header -->
 
 <?php if (!empty($page['emergency'])): ?>
 <div id="emergency-header">
@@ -83,23 +92,19 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
 <?php endif; ?>
 <!-- /#emergency-header -->
 
-
-
 <div id="header" class="clearfix">
   <div class="container">
     <div class="row">
       <?php /* <div id="logo" class="site-logo span4"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> */ ?>
-      <div id="logo" class="site-logo span4"> <a href="http://www.tbr.edu" title="<?php print t('Home'); ?>" rel="home"> 
-      	<img src="/<?php echo $tbr_base_theme; ?>/images/tbr_seal_edu.png" alt="<?php print $site_name; ?>" role="presentation" /> </a> 
-      </div>
+      <div id="logo" class="site-logo span4"> <a href="http://www.tbr.edu" title="<?php print t('Home'); ?>" rel="home"> <img src="/<?php echo $tbr_base_theme; ?>/images/tbr_seal_edu.png" alt="<?php print $site_name; ?>" role="presentation" /> </a> </div>
       <div id="main-menu" class="span9">
         <div class="navbar main-menu-navi">
           <div class="navbar-inner"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".mainbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
             <div class="nav-collapse mainbar">
               <nav role="navigation">
-              	<?php //print render($primary_nav); ?> 
+              <?php //print render($primary_nav); ?>
               <ul class="menu nav">
-              	<?php /*<li class="dropdown first">
+                <?php /*<li class="dropdown first">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Board of Regents <b class="caret"></b></a>
               		<ul class="dropdown-menu">
               			<li><a href="#">Action</a></li>
@@ -112,20 +117,20 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
                     </ul>
               	</li>
               	*/ ?>
-              	<li><a href="http://tbr.edu/tbrtest/">Board of Regents</a></li>
-              	<li><a href="http://tbr.edu/offices/chancellor.aspx?id=802">Chancellor</a></li>
-              	<li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
-              	<li><a href="http://tbr.edu/offices/default.aspx?id=1198">Administration</a></li>
-              	<li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>              	
-              	<li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
-              	<!--<li><a href="/">Especially For...</a></li>-->
-			  </ul>
-			
+                <li><a href="http://tbr.edu/tbrtest/">Board of Regents</a></li>
+                <li><a href="http://tbr.edu/offices/chancellor.aspx?id=802">Chancellor</a></li>
+                <li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
+                <li><a href="http://tbr.edu/offices/default.aspx?id=1198">Administration</a></li>
+                <li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>
+                <li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
+                <!--<li><a href="/">Especially For...</a></li>-->
+              </ul>
+              
               <!-- /#primary-menu -->
               <?php if (!empty($page['navigation'])): ?>
               <?php print render($page['navigation']); ?>
               <?php endif; ?>
-                          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -166,15 +171,12 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
 <!-- /#header -->
 
 */ ?>
-
 <?php if ($page['header_unit']): ?>
 <div id="header-unit" class="clearfix">
   <div class="container">
-  	<div id="header-unit-inner" class="row">
-  		<div class="header-unit-content">
-	  		<?php print render($page['header_unit']); ?>
-  		</div>
-  	</div>
+    <div id="header-unit-inner" class="row">
+      <div class="header-unit-content"> <?php print render($page['header_unit']); ?> </div>
+    </div>
   </div>
 </div>
 <!-- /#header_unit -->
@@ -197,14 +199,8 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
       <?php if ($page['sidebar_first']): ?>
       <div id="sidebar-first" class="sidebar span3">
         <div class="row-fluid"><?php print render($page['sidebar_first']); ?></div>
-        
         <?php if (user_is_logged_in()) : ?>
-		<?php endif; ?>
-
-      
-      
-      
-      
+        <?php endif; ?>
       </div>
       <!-- /#sidebar-first -->
       <?php endif; ?>
@@ -333,9 +329,7 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
   </div>
 </div>
 <!-- /#main, /#main-wrapper -->
-<div id="footer-logo">
-	<img src="/<?php echo $tbr_base_theme; ?>/images/footer_logo.png" alt="TBR Seal" title="TBR Seal">
-</div>
+<div id="footer-logo"> <img src="/<?php echo $tbr_base_theme; ?>/images/footer_logo.png" alt="TBR Seal" title="TBR Seal"> </div>
 <?php if ($page['footer']): ?>
 <div id="footer" class="clearfix">
   <div class="container">
@@ -345,43 +339,40 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
 <!-- /#footer -->
 <?php endif; ?>
 <div id="global-footer" style="position: static;">
-	<div id="institution-logos">
-      	<div class="container institutions">
-		  	<div class="row">
-			  	<div class="span12">
-			  		<div id="institution-logos-inner">
-				  		<img src="/<?php echo $tbr_base_theme; ?>/images/institution_logos.png" alt="TBR Institutions" title="TBR Seal">
-			  		</div>
-				</div>
-			</div>
-		</div>
-  </div>
-
-  <div id="other-footer">
-  <div class="container">
-    <div class="row">
-      <div id="bottom-text" class="span10">
-        <div id="bottom-menu" class="clear-block">
-          <ul>
-            <li><a href="#">TBR Home</a></li>
-            <li><a href="#">Maps &amp; Directions</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Copyright Complaints</a></li>
-          </ul>
-        </div>
-        <div id="copyright-eeo">
-          <p>The Tennessee Board of Regents (TBR) is one of the nation's largest higher education systems, governing 46 post-secondary educational institutions.
-            The TBR system includes six universities, 13 two-year colleges and 27 colleges of applied technology, providing programs to more than 240,000 students across the state.</p>
-          <p>The TBR is an AA/EEO employer and does not discriminate on the basis of race, color, national origin, sex, disability, or age in its programs and activities.
-            Full Non-Discrimination Policy.</p>
-        </div>
-        <div id="vcard">
-          <p>&copy; <?php echo date("Y"); ?> <span class="fn org">Tennessee Board of Regents</span>, <span class="adr"><span class="locality">Nashville</span>, <span class="region">Tennessee</span> <span class="postal-code">37217</span></span></p>
+  <div id="institution-logos">
+    <div class="container institutions">
+      <div class="row">
+        <div class="span12">
+          <div id="institution-logos-inner"> <img src="/<?php echo $tbr_base_theme; ?>/images/institution_logos.png" alt="TBR Institutions" title="TBR Seal"> </div>
         </div>
       </div>
     </div>
   </div>
+  <div id="other-footer">
+    <div class="container">
+      <div class="row">
+        <div id="bottom-text" class="span10">
+          <div id="bottom-menu" class="clear-block">
+            <ul>
+              <li><a href="http://www.tbr.edu">TBR Home</a></li>
+              <li><a href="http://www.tbr.edu/contact/default.aspx?id=1162">Contact</a></li>
+              <li><a href="/google/search/">Search</a></li>
+              <!--<li><a href="#">Terms of Use</a></li> -->
+              <li><a href="http://www.tbr.edu/offices/generalcounsel.aspx?id=1126">Copyright Complaints</a></li>
+            </ul>
+          </div>
+          <div id="copyright-eeo">
+            <p>The Tennessee Board of Regents (TBR) is one of the nation's largest higher education systems, governing 46 post-secondary educational institutions.
+              The TBR system includes six universities, 13 two-year colleges and 27 colleges of applied technology, providing programs to more than 240,000 students across the state.</p>
+            <p>The TBR is an AA/EEO employer and does not discriminate on the basis of race, color, national origin, sex, disability, or age in its programs and activities.
+              Full Non-Discrimination Policy.</p>
+          </div>
+          <div id="vcard">
+            <p>&copy; <?php echo date("Y"); ?> <span class="fn org">Tennessee Board of Regents</span>, <span class="adr"><span class="locality">Nashville</span>, <span class="region">Tennessee</span> <span class="postal-code">37217</span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div id="toTop" class="btn btn-large icon-arrow-up"></div>

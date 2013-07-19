@@ -183,6 +183,20 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	text-transform: uppercase;
 	font-size: 15px;
 }
+#global-header .navbar .nav li.dropdown.open>.dropdown-toggle, #global-header .navbar .nav li.dropdown.active>.dropdown-toggle, #global-header .navbar .nav li.dropdown.open.active>.dropdown-toggle {
+	background: none;
+}
+#global-header .dropdown-menu>li>a {
+	text-decoration: none;
+}
+#global-header .dropdown-menu>li>a:hover, #global-header .dropdown-menu>li>a:focus, #global-header .dropdown-submenu:hover>a, #global-header .dropdown-submenu:focus>a {
+	color: #fff;
+	text-decoration: none;
+	background-color: #344051;
+	background-image: none;
+	background-repeat: repeat-x;
+	filter: none;
+}
 #global-header #top-logo {
  	float: right;
 }
@@ -487,130 +501,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	color: #000 !important;
 	margin-bottom: 10px;
 }*/
-.group-topics>
-.ds-1col.node.node-policy-guideline ol {
-	list-style: upper-roman;
-}
-.ds-1col.node.node-policy-guideline ol ol {
-	list-style: upper-alpha;
-}
-.ds-1col.node.node-policy-guideline ol ol ol {
-	list-style: decimal;
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol {
-	list-style: lower-alpha;
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol {
-	list-style-type: none;
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol li:before {
-	content: "(" counter(section, decimal) ") ";
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol li {
-	counter-increment: section;
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol ol {
-	list-style-type: none;
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol ol li:before {
-	content: "(" counter(section2, lower-alpha) ") ";
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol ol li {
-	counter-increment: section2;
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol ol ol {
-	list-style-type: none;
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol ol ol li:before {
-	content: "(" counter(section3, lower-roman) ") ";
-}
-.ds-1col.node.node-policy-guideline ol ol ol ol ol ol ol li {
-	counter-increment: section3;
-}
-.group-topics div.vertical-tabs .vertical-tabs-list {
-  width: 100%;
-  margin: 0;
-  clear: both;
-  border-bottom: none;
-  margin-bottom: -1px;
-}
-
-.group-topics  div.vertical-tabs {
-  background: #FFFFFF;
-  border: none;
-  border-radius: none;
-  -moz-border-radius: none;
-  -webkit-border-radius: none;
-  -o-border-radius: none;
-  margin: 10px 0;
-  position: relative;
-}
-
-.group-topics div.vertical-tabs .vertical-tabs-panes {
-  margin: 0;
-  padding: 10px 15px;
-  clear: both;
-  border: 1px solid #ccc;
-}
-
-.group-topics div.vertical-tabs ul li.vertical-tab-button {
-  float: left;
-  margin: 0 3px 0 0;
-  border: 1px solid #aaa;
-  border-bottom: 1px solid #ccc;
-  border-radius: 10px 10px 0 0;
-  -moz-border-radius: 10px 10px 0 0;
-  -o-border-radius: 10px 10px 0 0;
-  -webkit-border-radius: 10px 10px 0 0;
-  background: #ddd;
-}
-.group-topics div.vertical-tabs ul li.vertical-tab-button:focus {
-
-	outline: none;
-}
-.group-topics div.vertical-tabs ul li.vertical-tab-button a {
-  border-top: medium none;
-  font-size: 0.917em;
-  line-height: 120%;
-  padding: 5px 9px 3px;
-  text-decoration: none;
-  font-weight: normal !important;
-}
-
-.group-topics div.vertical-tabs ul li.vertical-tab-button a:hover {
-  background: none;
-  outline: none;
-}
-
-.group-topics ul.vertical-tabs-list li a:hover strong {
-	text-decoration: none;
-	font-weight: normal;
-	border: none;
-}
-.group-topics ul.vertical-tabs-list li a strong {
-	text-decoration: none;
-	font-weight: normal;
-}
-.group-topics div.vertical-tabs ul li.selected {
-  border: 1px solid #ccc;
-  border-bottom: 1px solid #fff;
-  background: #fff;
-}
-.group-topics .vertical-tabs ul.vertical-tabs-list {
-	border-top: none;
-}
-.group-topics .vertical-tabs ul.vertical-tabs-list .summary {
-	display: none;
-}
-
-.group-topics div.vertical-tabs ul li.selected a,
-.group-topics div.vertical-tabs ul li.selected a:hover,
-.group-topics div.vertical-tabs ul li.selected a:focus,
-.group-topics div.vertical-tabs ul li.selected a:active {
-  background: none;
-  border: none;
-  text-decoration: none;
-}
 
 @media print {
 	.group-topics, #breadcrumb {

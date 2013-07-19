@@ -1,0 +1,9 @@
+/* helpdesk.webapps.tbr.edu */
+
+.front .title {
+	display: block;
+}
+#comments {
+	background: #eaeaea;
+	border: 4px solid #344051;	
+}
