@@ -35,7 +35,7 @@ function tbr_bootstrap_html_head_alter(&$head_elements) {
 
 /**
 * Allow themable breadcrumbs
-*/
+
 function tbr_bootstrap_breadcrumb($variables) {
    
    $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
@@ -69,5 +69,5 @@ function tbr_bootstrap_breadcrumb($variables) {
    }   
    
  }
-
+*/
 ?>

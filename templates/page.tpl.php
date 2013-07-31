@@ -22,37 +22,13 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
 <div id="global-search">
   <div class="container">
     <div class="global-search-inner">
-      <form action="/search/google/" method="get" id="global-search-form">
-        <fieldset>
-          <div class="global-search-left">
-            <input name="q" type="text" placeholder="Enter your search terms here">
-          </div>
-          <div class="global-search-right">
-            <label for="people">
-              <input type="radio" class="radiosearch" id="search-all-tbr" value="" name="sitesearch" checked="yes">
-              All of TBR.edu</label>
-            <!--
-			  <?php if ($host = "policies-tbr-edu") { ?>
-			  <label for="emerging"><input type="radio" class="radiosearch" id="search-emerging-tech" value="site:policies.tbr.edu" name="sitesearch">Emerging Tech</label>  
-			  <?php } ?>
-			  -->
-            <label for="emerging">
-              <input type="radio" class="radiosearch" id="search-emerging-tech" value="site:emergingtech.tbr.edu" name="sitesearch">
-              Emerging Tech</label>
-            <label for="people">
-              <input type="radio" class="radiosearch" id="search-site-section" value="xxxx" name="sitesearch">
-              This Site Section</label>
-            <label for="people">
-              <input type="radio" class="radiosearch" id="search-people" value="search-people" name="sitesearch">
-              System Office Staff</label>
-            <button id="do-site-search">Search</button>
-          </div>
-        </fieldset>
-      </form><!-- /form#global-search-form -->
+      <?php 
+      // Include Search Snippet
+      include("snippet-search.php"); 
+      ?>
     </div>
   </div>
-</div>
-<!-- /#global-search -->
+</div><!-- /#global-search -->
 
 <div id="global-header">
   <div class="container">
@@ -63,8 +39,8 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
             <li><a href="http://tbr.edu/schools/default.aspx?id=2436">Institutions</a></li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs &amp; Initiatives <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Emerging Technologies &amp; Mobilization</a></li>
-                <li><a href="#">TN Transfer Pathways</a></li>
+                <li><a href="http://www.tbrmobile.org">Emerging Technologies &amp; Mobilization</a></li>
+                <li><a href="http://www.tntransferpathway.org">TN Transfer Pathways</a></li>
               </ul>
             </li>
             <li class="show-search-list"><a href="#" id="show-search">Search <img src="/<?php echo $tbr_base_theme; ?>/images/search.png"></a></li>

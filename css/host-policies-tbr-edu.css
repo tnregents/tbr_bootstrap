@@ -67,5 +67,7 @@
 }
 .group-topics .list-columns li a:hover {
 	text-decoration: underline;
-	
+}
+ul.policy-exhibits li span.clearfix:before, ul.policy-exhibits li span.clearfix:after {
+	content: normal;
 }
