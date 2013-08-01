@@ -147,12 +147,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 #global-header .navbar-inner {
 	background: none;
 	border: none;
+	filter: none;
 }
 #global-header .navbar {
 	margin-bottom: 0;
 }
 #global-header #global-nav {
 	margin-left: 0;
+	background: #344051;
 }
 #global-header .navbar .nav > li > a {
 	padding: 6px 8px 6px;
@@ -265,6 +267,12 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 #header #logo img {
 	width: 76%;
 	height: auto;
+}
+.ie8 #header #logo {
+	margin: 20px 20px 0 30px;
+}
+.ie8 .span4 {
+	width: 330px;
 }
 /* ----- Site Title and Slogan ------- */
 
@@ -541,7 +549,25 @@ img.board-members-nophoto {
 .gs-result .gs-title, .gs-result .gs-title a {
 	 color: #344051 !important;
 }
-
+.gsc-webResult table {
+	border-color: none !important;
+}
+.gsc-webResult {
+	border-bottom-color: none !important;
+}
+.gsc-webResult .gsc-result {
+	margin: 0;
+	padding: 0;
+	border-bottom: none !important;
+}
+.gsc-above-wrapper-area {
+	border-bottom: none !important;
+	padding: 0 !important;
+	display: none !important;
+}
+#google-cse-results th, #google-cse-results td {
+	padding: 0;
+}
 /* CONTAINERS ***************************** */
 
 /* ----- Blocks ---------------------- */
