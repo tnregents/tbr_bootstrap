@@ -17,7 +17,7 @@
 	padding: 4px 4px;
 }
 
-.view-taxonomy-term-for-policies .view-footer .term_icon {
+.view-footer .term_icon {
 	float: left;
 	font-size: 14px;
 	padding-right: 16px;
@@ -70,4 +70,7 @@
 }
 ul.policy-exhibits li span.clearfix:before, ul.policy-exhibits li span.clearfix:after {
 	content: normal;
+}
+.view-exhibits-listing h3 {
+	font-size: 16px;
 }

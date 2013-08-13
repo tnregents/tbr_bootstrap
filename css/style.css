@@ -31,7 +31,7 @@ body, input, button, select, textarea {
 	clear: both;
 	visibility: hidden;
 }
-.print-date {
+.print-date, .noshow {
 	display: none;
 }
 /* ----- Custom Fonts ---------------- */
@@ -65,6 +65,12 @@ a {
 table {
 	width: 100%;
 }
+tbody {
+	background: #fff;
+}
+tbody tr:hover {
+	background: #f5f5f5;
+}
 /* ----- Forms ----------------------- */
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
 	border-color: none;
@@ -81,7 +87,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 #global-search-form input, #global-search-form label, #global-search-form button {
 	float: left;
 }
-#global-search-form label {
+#global-search-form .search-area {
 	padding-left: 10px;
 	font-weight: 200;
 }
@@ -94,6 +100,9 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	clear: both;
 	color: #eaeaea;
 	overflow: hidden;
+}
+#global-search-text {
+	width: 100%;
 }
 .global-search-left {
 	display: block;
@@ -599,6 +608,9 @@ img.right, .img-right {
 /* ADMINISTRATION ************************ */
 /* ----- Admin ----------------------- */
 /* ----- User Block ------------------ */
+#block-user-login .content {
+	margin: 10px;
+}
 
 #toTop {
 	position: fixed; /* this is the magic */
@@ -635,6 +647,9 @@ img.right, .img-right {
  @media (min-width: 979px) and (max-width: 1381px) {
 	#main #sidebar-first .block {
 		margin-left: 26px;
+	}
+	#main #sidebar-first input[type="text"], #main #sidebar-first input[type="password"] {
+		width: 160px;
 	}
 	body {
 		font-size: 14px;
@@ -686,6 +701,12 @@ img.right, .img-right {
 	.view-forms .views-field-created {
 		display: none;
 	}
+	#global-header #top-logo {
+		display: none;
+	}
+	#global-header .global-nav-navi {
+		display: none;
+	}
 }
 /* Landscape phones and down */
  @media (max-width: 480px) {
@@ -734,4 +755,7 @@ img.right, .img-right {
 	#toTop {
 		display: none;
 	}
+}
+#edit-comment-body-und-0-format.filter-wrapper {
+	display: none;
 }

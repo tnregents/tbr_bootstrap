@@ -43,7 +43,7 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
                 <li><a href="http://www.tntransferpathway.org">TN Transfer Pathways</a></li>
               </ul>
             </li>
-            <li class="show-search-list"><a href="#" id="show-search">Search <img src="/<?php echo $tbr_base_theme; ?>/images/search.png"></a></li>
+            <li class="show-search-list"><a href="#" id="show-search">Search <img src="/<?php echo $tbr_base_theme; ?>/images/search.png" alt="Show Search Form"></a></li>
           </ul>
         </div>
       </div>
@@ -305,7 +305,7 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
   </div>
 </div>
 <!-- /#main, /#main-wrapper -->
-<div id="footer-logo"> <img src="/<?php echo $tbr_base_theme; ?>/images/footer_logo.png" alt="TBR Seal" title="TBR Seal"> </div>
+<div id="footer-logo"> <img src="/<?php echo $tbr_base_theme; ?>/images/footer_logo.png" alt="TBR Seal"> </div>
 <?php if ($page['footer']): ?>
 <div id="footer" class="clearfix">
   <div class="container">
@@ -319,7 +319,7 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
     <div class="container institutions">
       <div class="row">
         <div class="span12">
-          <div id="institution-logos-inner"> <img src="/<?php echo $tbr_base_theme; ?>/images/institution_logos.png" alt="TBR Institutions" title="TBR Seal"> </div>
+          <div id="institution-logos-inner"> <img src="/<?php echo $tbr_base_theme; ?>/images/institution_logos.png" alt="TBR Institutions"> </div>
         </div>
       </div>
     </div>

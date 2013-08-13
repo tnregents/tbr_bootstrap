@@ -10,6 +10,11 @@
   <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0">
   <title><?php print $head_title; ?></title>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon" href="<?php print base_path() . drupal_get_path('theme', 'tbr_bootstrap') . '/images/icons/touch/apple-touch-icon.png'; ?>" />
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php print base_path() . drupal_get_path('theme', 'tbr_bootstrap') . '/images/icons/touch/apple-touch-icon-57x57.png'; ?>" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php print base_path() . drupal_get_path('theme', 'tbr_bootstrap') . '/images/icons/touch/apple-touch-icon-72x72.png'; ?>" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php print base_path() . drupal_get_path('theme', 'tbr_bootstrap') . '/images/icons/touch/apple-touch-icon-114x114.png'; ?>" />
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php print base_path() . drupal_get_path('theme', 'tbr_bootstrap') . '/images/icons/touch/apple-touch-icon-144x144.png'; ?>" />
   <?php print $styles; ?>
   <?php print $scripts; ?>
   <!--[if IE 7]>
@@ -26,5 +31,5 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
 </body>
-<?php include("analyticstracking.php"); ?>
+<?php include("snippet-analytics.php"); ?>
 </html>

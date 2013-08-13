@@ -2,7 +2,6 @@
 
     $(document).ready(function () {
 
-
         $(window).scroll(function () {
             if ($(this).scrollTop()) {
                 $('#toTop').fadeIn();
@@ -55,7 +54,7 @@
 
         $.breakpoint({
             condition: function () {
-                return window.matchMedia('only screen and (max-width:480px)').matches;
+                return window.matchMedia('only screen and (max-width:767px)').matches;
             },
             first_enter: function () {
 
@@ -73,8 +72,12 @@
 
             }
         });
-
-
+        
+        // If this is a policy, then replace the word "Exhibit" within the policy content with a link to the exhibit area
+        if( $(".policy-content").length ){
+        	var thePage = $(".policy-content");
+			thePage.html(thePage.html().replace(/exhibit/ig, '<a href="#exhibits">Exhibit</a>'));
+		}
     });
 
 
