@@ -33,6 +33,9 @@ body, input, button, select, textarea {
 	clear: both;
 	visibility: hidden;
 }
+#edit-submit, #edit-preview {
+	margin-right: 10px;
+}
 .print-date, .noshow {
 	display: none;
 }
