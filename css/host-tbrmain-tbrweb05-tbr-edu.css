@@ -1,0 +1,79 @@
+.front .span12 {
+	width: 100%;
+}
+#home-systems-univ, #home-systems-cc, #home-systems-tcat {
+	width: 32.3%;
+	height: 425px;
+	background: #000;
+	margin-left: 10px;
+	float: left;
+}
+#modalContent {
+	top: 10px !important;
+}
+.front #main-content.row {
+	margin-right: 30px;
+}
+.front #main #content-wrapper {
+	margin: 0px 0px;
+}
+#home-systems {
+	height: auto;
+}
+#home-stats {
+	border-top: 10px solid #344051;
+	clear: both;
+	width: 100%;
+	background: #eee;
+	height: auto;
+}
+.home-stats-inner {
+	padding-top: 20px;
+	padding-left: 80px;
+}
+.home-number {
+	font-size: 40px;
+	font-weight: bold;
+}
+.home-number-label {
+	display: block;
+	clear: left;
+}
+.home-stats-item {
+	width: 24%;
+	float: left;
+}
+.ds-2col > .group-left {
+	width: 25%;
+}
+
+ul.dropdown-menu {
+	width: 400px;
+}
+.dropdown-menu > li.column-menu ul {
+    display: inline-block;
+    list-style: none outside none;
+    margin: 10px;
+    width: 10%;
+    position: relative;
+    border: none;
+    box-shadow: none;
+}
+.dropdown-menu > li.column-menu li {
+    display: inline;
+    float: left;
+    width: 100%;
+}
+.dropdown-menu > li.column-menu:first-child {
+    margin-left: 0;
+}
+
+.dropdown-menu >li.column-menu li:not(:first-child){
+	margin-left:10px;
+}
+
+.dropdown-menu > li.column-menu li:first-child {
+    font-weight:bold;
+    font-size:1.5em;
+    color:#340f5a;
+}

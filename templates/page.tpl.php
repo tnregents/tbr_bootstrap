@@ -93,13 +93,47 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
                     </ul>
               	</li>
               	*/ ?>
-                <li><a href="http://tbr.edu/tbrtest/">Board of Regents</a></li>
-                <li><a href="http://tbr.edu/offices/chancellor.aspx?id=802">Chancellor</a></li>
-                <li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
-                <li><a href="http://tbr.edu/offices/default.aspx?id=1198">Administration</a></li>
-                <li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>
-                <li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
+                <?php if($tbr_host == "tbrmain-tbrweb05-tbr-edu"){ ?>
+	                <li><a href="/board">Board of Regents</a></li>
+	                <li><a href="/chancellor">Chancellor</a></li>
+	                <li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
+	                <li class="dropdown">
+	                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
+							<ul class="dropdown-menu subdropdown" role="menu">
+   
+						        <li class="column-menu">
+						            <ul>
+						                <li>Column 1</li>
+						                <li><a href="#">Item</a></li>
+						                <li><a href="#">Item</a></li>
+						                <li><a href="#">Item</a></li>
+						                <li><a href="#">Item</a></li>
+						            </ul>
+						        </li>
+						        <li class="column-menu">
+						            <ul>
+						                <li>Column 2</li>
+						                <li><a href="#">Item</a></li>
+						                <li><a href="#">Item</a></li>
+						                <li><a href="#">Item</a></li>
+						                <li><a href="#">Item</a></li>
+						            </ul>
+						
+						      </li>
+						  </ul>                    
+					</li>
+	                <li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>
+	                <li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
                 <!--<li><a href="/">Especially For...</a></li>-->
+                <?php } else { ?> 
+	                <li><a href="http://tbr.edu/tbrtest/">Board of Regents</a></li>
+	                <li><a href="http://tbr.edu/offices/chancellor.aspx?id=802">Chancellor</a></li>
+	                <li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
+	                <li><a href="http://tbr.edu/offices/default.aspx?id=1198">Administration</a></li>
+	                <li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>
+	                <li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
+	                <!--<li><a href="/">Especially For...</a></li>-->
+              <?php } ?>
               </ul>
               
               <!-- /#primary-menu -->
@@ -331,6 +365,7 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
           <div id="bottom-menu" class="clear-block">
             <ul>
               <li><a href="http://www.tbr.edu">TBR Home</a></li>
+              <li><a href="http://tbr.edu/offices/chancellor.aspx?id=9037">Accessibility</a></li>
               <li><a href="http://www.tbr.edu/contact/default.aspx?id=1162">Contact</a></li>
               <li><a href="/google/search/">Search</a></li>
               <!--<li><a href="#">Terms of Use</a></li> -->

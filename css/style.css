@@ -5,7 +5,9 @@ dark blue - #344051
 
 /* GLOBAL ********************************* */
 /* ----- System Fixes ---------------- */
-
+.clearboth {
+	clear: both;
+}
 .front .title {
 	display: none;
 }

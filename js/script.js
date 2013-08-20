@@ -28,6 +28,8 @@
         
         $("#edit-keys").removeAttr('style');
 
+		$(".dropdown-menu li.column-menu ul").addClass('dropdown-menu-nogo');
+		
         $('input[type=text]').attr('x-webkit-speech', 'x-webkit-speech');
 
         // Add section-home class to the first li element in the sidebar     
