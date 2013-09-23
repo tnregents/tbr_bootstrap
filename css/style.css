@@ -33,11 +33,17 @@ body, input, button, select, textarea {
 	clear: both;
 	visibility: hidden;
 }
+.readmore {
+	text-align: right;
+}
 #edit-submit, #edit-preview {
 	margin-right: 10px;
 }
 .print-date, .noshow {
 	display: none;
+}
+.item-list ul {
+	margin: 0 0 10px 25px;
 }
 /* ----- Custom Fonts ---------------- */
 /* ----- Text ------------------------ */
@@ -582,6 +588,10 @@ img.board-members-nophoto {
 #google-cse-results th, #google-cse-results td {
 	padding: 0;
 }
+.gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title * {
+	text-decoration: underline !important;
+	overflow: visible;
+}
 /* CONTAINERS ***************************** */
 
 /* ----- Blocks ---------------------- */
@@ -760,7 +770,17 @@ img.right, .img-right {
 	#toTop {
 		display: none;
 	}
+	#content-wrapper * {
+		overflow: visible;
+	}
+	#content-wrapper li {
+		overflow: visible;
+	}
 }
 #edit-comment-body-und-0-format.filter-wrapper {
 	display: none;
+}
+.ie8 #global-search-form input[type='text'], .ie910 #global-search-form input[type='text'] {
+	color: #344051;
+	background: #ffffff !important;
 }

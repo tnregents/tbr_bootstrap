@@ -19,3 +19,15 @@
 	border: 1px solid #d13138;
 	padding: 6px;	
 }
+.view .attachment .views-field {
+	width: 200px;
+	float: left;
+}
+.view .attachment .views-label {
+	font-weight: bold;
+}
+.view .attachment .view-content {
+	border: 1px solid #eaeaea;
+	padding: 4px;
+	margin-bottom: 10px;
+}
