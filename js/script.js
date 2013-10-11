@@ -10,7 +10,6 @@
             }
         });
         
-
         $("#do-site-search").click(function(e) {
 	         e.preventDefault();
 	         var globalsearchterm = $('.global-search-left input[type=text]').val();

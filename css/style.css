@@ -42,6 +42,7 @@ body, input, button, select, textarea {
 .print-date, .noshow {
 	display: none;
 }
+
 .item-list ul {
 	margin: 0 0 10px 25px;
 }
@@ -382,7 +383,30 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 /* ----- Second Sidebar Menu Blocks -- */
 /* ----- Admin Menu ------------------ */
 /* ----- Pager Nav ------------------- */
-
+.item-list .pager {
+	width: 100%;
+	margin-top: 20px;
+	display: inline-block;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+.item-list .pager li {
+	margin: 0;
+	padding: 0;
+}
+.pager li>a, .pager li>span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.item-list .pager li.pager-current {
+	padding-left: 10px;
+	padding-right: 10px;
+}
 /* SIDEBARS ******************************* */
 /* ----- First Sidebar Blocks ---------*/
 #sidebar-first div.block {
@@ -527,6 +551,27 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .list-columns a {
 	text-decoration: none;
 }
+
+/* ----- Content Head ---------------------- */
+.nav-tabs>li>a {
+	text-decoration: none;
+}
+.nav-tabs {
+	border: 1px solid #ddd;
+}
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+	border: none !important;
+	background: #787f8a;
+	color: #eaeaea;
+}
+.nav-tabs>li>a {
+	border: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+
 /* VIEWS ********************************** */
 /* ----- Tables ---------------------- */
 table.views-table {
@@ -643,6 +688,17 @@ img.right, .img-right {
 .google-cse input[id="edit-keys"] {
 	width: 90%;
 }
+
+/* ----- Revisions ------------------ */
+td.diff-section-title, div.diff-section-title {
+	color: #d13138;
+	border-bottom: 1px solid #eaeaea;
+	font-weight: 400;
+	font-size: 24px;
+	background-color: #fff;
+}
+
+
 /* MEDIA QUERIES ************************* */
 /* ----- Responsive ------------------ */
  @media (min-width: 1382px) {
