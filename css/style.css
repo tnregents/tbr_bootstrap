@@ -72,6 +72,9 @@ a {
 	color: #344051;
 	text-decoration: underline;
 }
+a.btn {
+	text-decoration: none;
+}
 /* ----- Lists ----------------------- */
 /* ----- Tables ---------------------- */
 table {
