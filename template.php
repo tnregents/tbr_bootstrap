@@ -11,12 +11,14 @@ function tbr_bootstrap_html_head_alter(&$head_elements) {
 }
 
 /**
- * Add subdomain class to body eg. policies-tbr-edu 
+ * Add subdomain class to body eg. policies-tbr-edu
  */
- 
- function tbr_bootstrap_preprocess_html(&$variables) {
- 
+
+function tbr_bootstrap_preprocess_html(&$variables) {
+
   $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
+  $tbr_host = explode('-', $tbr_host);
+  $tbr_host = $tbr_host[0];
 
   //add host class in the body
   $variables['classes_array'][] = $tbr_host;
@@ -30,45 +32,4 @@ function tbr_bootstrap_html_head_alter(&$head_elements) {
   }
 
 }
-/* function tbr_bootstrap_preprocess_html(&$variables) {
-  $variables['classes_array'][] = str_replace('.', '-', $_SERVER['SERVER_NAME']);
-} */
-
-/**
-* Allow themable breadcrumbs
-
-function tbr_bootstrap_breadcrumb($variables) {
-   
-   $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
-   
-   if (count($variables['breadcrumb']) > 0) {
-     $lastitem = sizeof($variables['breadcrumb']);
-     $title = drupal_get_title();
-     $crumbs = '<ul class="breadcrumb">';
-     $a=1;
-     foreach($variables['breadcrumb'] as $value) {
-         if ($a!=$lastitem){
-          $crumbs .= '<li class="breadcrumb-'.$a.'">'. $value . ' ' . '<span class="divider">/</span></li>';
-          $a++;
-         }
-         else {
-             $crumbs .= '<li class="breadcrumb-last">'.$value.'</li>';
-         }
-     }
-     $crumbs .= '</ul>';
-   return $crumbs;
-   }   
-   else if ($tbr_host == "policies-tbr-edu") {
-   	$crumbs = '<ul class="breadcrumb">';
-   	$crumbs .= '<li class="breadcrumb-1"><a href="/">Home</a> <span class="divider">/</span></li>';
-   	$crumbs .= '<li class="breadcrumb-2"><a href="http://tbr.edu/offices/generalcounsel.aspx?id=1118">Office of General Counsel</a></li>';
-   	$crumbs .= '</ul>';
-   return $crumbs;
-   }
-   else {
-     return t("");
-   }   
-   
- }
-*/
 ?>
