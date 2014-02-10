@@ -446,7 +446,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 }
 /* Forms */
 
-#main fieldset {
+#main fieldset:not(.horizontal-tabs-pane) {
 	position: relative;
 	margin: 15px 0;
 	padding: 39px 19px 14px;
@@ -456,7 +456,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-#main fieldset legend {
+#main fieldset:not(.horizontal-tabs-pane) legend {
 	position: absolute;
 	top: -1px;
 	left: -1px;
@@ -493,6 +493,22 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	display: inline-block;
 	margin-bottom: 0;
 	vertical-align: middle;
+}
+.webform-component-radios {
+	padding-bottom: 20px;
+}
+.webform-component-radios .form-radios {
+	margin-left: 40px;
+}
+.webform-component-radios .form-type-radio {
+	clear: both;
+}
+.webform-component-radios .form-type-radio input {
+	float: left;
+	margin-right: 10px;
+}
+.webform-component-radios .form-type-radio label {
+	float: left;
 }
 .webform-client-form .form-actions {
 	width: 96%;

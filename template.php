@@ -1,18 +1,9 @@
 <?php
 
-/**
- * Implements hook_html_head_alter()
- * Removes the "Drupal 7" generator metatag.
- */
-
 function tbr_bootstrap_html_head_alter(&$head_elements) {
   unset($head_elements['metatag_generator']);
   unset($head_elements['system_metatag_generator']);
 }
-
-/**
- * Add subdomain class to body eg. policies-tbr-edu
- */
 
 function tbr_bootstrap_preprocess_html(&$variables) {
 
@@ -32,4 +23,3 @@ function tbr_bootstrap_preprocess_html(&$variables) {
   }
 
 }
-?>
