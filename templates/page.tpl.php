@@ -96,41 +96,49 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
                 <?php if($tbr_host == "tbrmain-tbrweb05-tbr-edu"){ ?>
 	                <li><a href="/board">Board of Regents</a></li>
 	                <li><a href="/chancellor">Chancellor</a></li>
-	                <li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
+	                <li><a href="/academics">Academics</a></li>
 	                <li class="dropdown">
 	                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
 							<ul class="dropdown-menu subdropdown" role="menu">
    
 						        <li class="column-menu">
 						            <ul>
-						                <li>Column 1</li>
-						                <li><a href="#">Item</a></li>
-						                <li><a href="#">Item</a></li>
-						                <li><a href="#">Item</a></li>
-						                <li><a href="#">Item</a></li>
+						                <?php //<li>Office</li> ?>
+						                <li><a href="/chancellor">Chancellor</a></li>
+						                <li><a href="/academics">Academic Affairs</a></li>
+						                <li><a href="/administration">Administration and Facilities Development</a></li>
+						                <li><a href="/business">Business and Finance</a></li>
+						                <li><a href="/cc">Community Colleges</a></li>
+						                <li><a href="/generalcounsel">General Counsel</a></li>
+						                <li><a href="/it">Information Technology</a></li>
+						                <li><a href="/oesi">Organizational Effectiveness and Strategic Initiatives</a></li>
+						                <li><a href="/audit">System-wide Internal Audit</a></li>
+						                <li><a href="tcats">Tennessee Colleges of Applied Technology</a></li>
 						            </ul>
 						        </li>
+						        <?php /*
 						        <li class="column-menu">
 						            <ul>
 						                <li>Column 2</li>
-						                <li><a href="#">Item</a></li>
+						                <li><a href="#">Business and Finance</a></li>
 						                <li><a href="#">Item</a></li>
 						                <li><a href="#">Item</a></li>
 						                <li><a href="#">Item</a></li>
 						            </ul>
 						
 						      </li>
+						      */ ?>
 						  </ul>                    
 					</li>
-	                <li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>
-	                <li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
+	                <li><a href="https://policies.tbr.edu">Policies &amp; Guidelines</a></li>
+	                <li><a href="/communications/news">News & Reports</a></li>
                 <!--<li><a href="/">Especially For...</a></li>-->
                 <?php } else { ?> 
 	                <li><a href="http://tbr.edu/tbrtest/">Board of Regents</a></li>
 	                <li><a href="http://tbr.edu/offices/chancellor.aspx?id=802">Chancellor</a></li>
 	                <li><a href="http://tbr.edu/offices/academicaffairs.aspx?id=1172">Academics</a></li>
 	                <li><a href="http://tbr.edu/offices/default.aspx?id=1198">Administration</a></li>
-	                <li><a href="http://tbr.edu/policies/default.aspx?id=1166">Policies &amp; Guidelines</a></li>
+	                <li><a href="https://policies.tbr.edu">Policies &amp; Guidelines</a></li>
 	                <li><a href="http://tbr.edu/news/default.aspx">News & Reports</a></li>
 	                <!--<li><a href="/">Especially For...</a></li>-->
               <?php } ?>
@@ -197,7 +205,9 @@ $tbr_host = str_replace('.', '-', $_SERVER['SERVER_NAME']);
 <div id="main" class="clearfix">
   <div class="container">
     <?php //if ($breadcrumb): ?>
+    <?php if (!drupal_is_front_page()): ?>
     <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+    <?php endif; ?>
     <?php //endif; ?>
     <?php if ($page['main_top']): ?>
     <div id="main-top" class="row-fluid"> <?php print render($page['main_top']); ?> </div>

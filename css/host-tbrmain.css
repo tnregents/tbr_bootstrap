@@ -20,41 +20,16 @@
 #home-systems {
 	height: auto;
 }
-#home-stats {
-	border-top: 10px solid #344051;
-	clear: both;
-	width: 100%;
-	background: #eee;
-	height: auto;
+.dropdown-menu {
+	background: none;
 }
-.home-stats-inner {
-	padding-top: 20px;
-	padding-left: 80px;
-}
-.home-number {
-	font-size: 40px;
-	font-weight: bold;
-}
-.home-number-label {
-	display: block;
-	clear: left;
-}
-.home-stats-item {
-	width: 24%;
-	float: left;
-}
-.ds-2col > .group-left {
-	width: 25%;
-}
-
-ul.dropdown-menu {
-	width: 400px;
+.dropdown-menu {
+	background: #eaeaea;
 }
 .dropdown-menu > li.column-menu ul {
     display: inline-block;
     list-style: none outside none;
-    margin: 10px;
-    width: 10%;
+    margin-left: -10px;
     position: relative;
     border: none;
     box-shadow: none;
@@ -64,6 +39,95 @@ ul.dropdown-menu {
     float: left;
     width: 100%;
 }
+.navbar .nav li.dropdown.open>.dropdown-toggle, .navbar .nav li.dropdown.active>.dropdown-toggle, .navbar .nav li.dropdown.open.active>.dropdown-toggle {
+	background: none;
+}
+.dropdown-menu>li>a {
+	text-decoration: none;
+	line-height: 24px;	
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
+	background-color: #787f8a;
+	color: #eaeaea;
+	text-decoration: none;
+	background-image: none;
+}
+#block-views-recent-campus-news-block-1, #block-views-news-block-1 {
+	line-height: normal;
+	padding-left: 20px;
+}
+#block-views-recent-campus-news-block-1 .views-field-field_image, #block-views-news-block-1 .views-field-field_image {
+	padding-right: 6px;
+}
+#block-views-recent-campus-news-block-1 .span4 {
+	padding-bottom: 20px;
+}
+#block-views-recent-campus-news-block-1 .views-field-field_campus {
+	font-weight: bold;
+	font-style: italic;
+	font-size: small;
+}
+#block-views-news-block-1 {
+	border-top: 10px solid #344051;
+	border-bottom: 10px solid #344051;
+}
+#block-views-recent-campus-news-block-1 {
+
+}
+
+/* Homepage Statistics */
+
+#block-block-5 {
+	background: #e4dece;
+	margin-bottom: 20px;
+}
+.homestat {
+	width: 20%;
+	float: left;
+	padding: 20px;
+	text-align: right;
+	color: #344051;
+}
+.homestatnum {
+	font-weight: 600;
+	font-size: 54px;
+}
+
+#views-bootstrap-grid-1 {
+	margin-left: 20px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+#views-bootstrap-grid-1 .views-field-body  {
+	padding: 10px;
+	font-weight: 200;
+	color: #fff;
+	line-height: normal;
+	position: absolute; 
+	top: 200px; 
+	width: 26%; 
+	background-color:rgba(0, 0, 0, 0.6);
+	margin-top: 50px;
+}
+
+.homeinstitution {
+	padding-bottom: 20px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+#views-bootstrap-grid-2 .views-field-title {
+	font-weight: 600;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: larger;
+}
+
+/* END Homepage Statistics */
+
+
+/*
 .dropdown-menu > li.column-menu:first-child {
     margin-left: 0;
 }
@@ -77,3 +141,4 @@ ul.dropdown-menu {
     font-size:1.5em;
     color:#340f5a;
 }
+*/
